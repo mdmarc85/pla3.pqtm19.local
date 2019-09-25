@@ -1,47 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta charset="UTF-8" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-------------------------------------------- Bootstrap CSS ------------------------------------------------------->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<title>Exercici: PLA3_s1.A.Variables</title>
 </head>
 <body>
 
 
-<div id="msgBox" class="container">
-
-
+<div class="row">
+	<button class="col-6" id="carNameBtn">carNameBtn</button>
+	<div class="col-6 border rounded">CarName:
+		<div id="carNameBox">
+		</div>
+	</div>
 </div>
 
+<div class="row">
+	<button class="col-6" id="varXBtn">varXBtn</button>
+	<div class="col-6 border rounded">Mostrar Variable:
+		<div id="varXBox">
+		</div>
+	</div>
+</div>
 
+<div class="row">
+	<button class="col-6" id="btnDemo">btnDemo</button>
+	<div class="col-6 border rounded">Mostrar suma:
+		<div id="demo">
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<button class="col-6" id="varZBtn">varZBtn</button>
+	<div class="col-6 border rounded">Mostrar x4+y4:
+		<div id="varZBox">
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<button class="col-6" id="varname">varZBtn</button>
+	<div class="col-6 border rounded">Mostrar button name:
+		<div id="userBtn">
+		</div>
+	</div>
+</div>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-    // Crear una variable integer
-    var x=3;
-    // Crear una variable float
-    var y=4.7;
-    // Crear una variable String
-    var cadena="hola Mundo!!";
-    // Crear una variable booleana
-    var condicio=true;
-    
-    // Crear una array
-    var semana=["Lun","Mar","Mx","Jv","Vrn","Sb","Dm"];
-	// console.log(semana[1]);
-	// console.log(semana.length);
-	for (var j=0; j<4 ;j++){
-		for(var i=0; i < semana.length; i++){
-			console.log(semana[i]);
-			console.log(i);
-			debugger;
-		}
+
+
+	//------------------ 1 ----------------------------- 
+	var carName="Volvo";
+	document.getElementById("carNameBtn").onclick=function() {
+		console.log(carName);
+		document.getElementById("carNameBox").innerHTML=carName;
+		} 
+
+	//------------------ 2 ----------------------------- 
+	var x=50;
+	document.getElementById("varXBtn").onclick=function(){
+		console.log(x);
+		document.getElementById("varXBox").innerHTML=x; }
+
+	//------------------ 3 ----------------------------- 	
+	var x3 = 5;
+	var y3 = 10;
+	document.getElementById("btnDemo").onclick=function(){
+	document.getElementById("demo").innerHTML=x3+y3; 
+	} 
+		
+	//------------------ 4 ----------------------------- 
+	var x4 = 2;
+	var y4 = 8;
+	var z4 = x4 + y4;
+	document.getElementById("varZBtn").onclick=function(){
+		alert(z4);
+	document.getElementById("varZBox").innerHTML=z4;
 	}
-
-document.getElementById("msgBox").innerHTML=cadena;
-
-for(var i=0; i<10; i=i+1){
-	x++;
-	console.log(x);
-}
+	
+	//------------------ 5 ----------------------------- 	
+	var firstName = "John", lastName = "Doe", age = "35"
+	document.getElementById("varname").onclick=function(){
+		console.log(varname)
+		var ul= "<ul>";
+		
+	document.getElementById("userBtn").innerHTML=x3+y3; 
+	} 
+	
 </script>
-
 </body>
 </html>
