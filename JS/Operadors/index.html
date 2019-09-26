@@ -69,8 +69,22 @@ document.getElementById("calcular").onclick=function() {
 	document.getElementById("resultado").value=resultadofinal;
 	} 
 	
-	var operacio = document.querySelector("input[name=operador]:checked").value;
-	
+var operacio = document.querySelector("input[name=operador]:checked").value;
+
+switch (new Date().getDay()) {
+case suma:
+  day = "Sunday";
+  break;
+case resta:
+  day = "Monday";
+  break;
+case multiplicació:
+   day = "Tuesday";
+  break;
+case divisió:
+  day = "Wednesday";
+  break;
+}
 	
 
 
