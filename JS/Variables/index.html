@@ -42,9 +42,9 @@
 </div>
 
 <div class="row">
-	<button class="col-6" id="varname">varZBtn</button>
-	<div class="col-6 border rounded">Mostrar button name:
-		<div id="userBtn">
+	<button class="col-6" id="userBtn">varZBtn</button>
+	<div class="col-6 border rounded">Mostrar User:
+		<div id="userBox">
 		</div>
 	</div>
 </div>
@@ -86,12 +86,13 @@
 	}
 	
 	//------------------ 5 ----------------------------- 	
-	var firstName = "John", lastName = "Doe", age = "35"
-	document.getElementById("varname").onclick=function(){
-		console.log(varname)
-		var ul= "<ul>";
-		
-	document.getElementById("userBtn").innerHTML=x3+y3; 
+	var firstName = "John", lastName = "Doe", age = "35";
+	document.getElementById("userBtn").onclick=function(){
+		console.log(firstName)
+		console.log(lastName)
+		console.log(age)
+		var ul= "<ul><li>Nombre: + firstName</li><li>Apellidos: + lastName</li><li>Edad: + age</li></ul>;
+	document.getElementById("userBox").innerHTML=ul; 
 	} 
 	
 </script>
