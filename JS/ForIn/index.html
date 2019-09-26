@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul id="monthsBox"></ul>
+		<script type="text/javascript">
+		
+		
+		function publishUL(){
+			console.log("Dintre de la funció");			
+		}
+		
+		var months = ["January","Frebruary","March","April","May","June","July","August","September","October","November","December"];
+		for(month in months){
+			console.log(months[month]);
+			document.getElementById("monthsBox").innerHTML+="<li>"+ months[month] +"</li>";
+			publishUL();
+			debugger;			
+		}
+		</script>
+
+
+
+</body>
+</html>

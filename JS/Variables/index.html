@@ -42,8 +42,8 @@
 </div>
 
 <div class="row">
-	<button class="col-6" id="userBtn">varZBtn</button>
-	<div class="col-6 border rounded">Mostrar User:
+	<button class="col-6" id="userBtn">userBtn</button>
+	<div class="col-6 border rounded">userBox:
 		<div id="userBox">
 		</div>
 	</div>
@@ -88,12 +88,19 @@
 	//------------------ 5 ----------------------------- 	
 	var firstName = "John", lastName = "Doe", age = "35";
 	document.getElementById("userBtn").onclick=function(){
-		console.log(firstName)
-		console.log(lastName)
-		console.log(age)
-		var ul= "<ul><li>Nombre: + firstName</li><li>Apellidos: + lastName</li><li>Edad: + age</li></ul>;
+		console.log("proba");
+		debugger;
+		var ul="<ul>"
+		ul+="<li>Nombre: " + firstName + "</li>"
+		ul+="<li>Apellidos: " + lastName + "</li>"
+		ul+="<li>Edad: " + age + "</li>"
+		ul+="</ul>";
+		debugger;
 	document.getElementById("userBox").innerHTML=ul; 
-	} 
+	}
+	
+
+
 	
 </script>
 </body>
