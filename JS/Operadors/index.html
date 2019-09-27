@@ -63,33 +63,65 @@
 <script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 
-var resultadofinal="Volvo";
-document.getElementById("calcular").onclick=function() {
-	console.log("prueba");
-	document.getElementById("resultado").value=resultadofinal;
-	} 
-	
-var operacio = document.querySelector("input[name=operador]:checked").value;
 
-switch (new Date().getDay()) {
-case suma:
-  day = "Sunday";
-  break;
-case resta:
-  day = "Monday";
-  break;
-case multiplicació:
-   day = "Tuesday";
-  break;
-case divisió:
-  day = "Wednesday";
-  break;
+	// button 1 sumatori
+document.getElementById("button-suma-num1").onclick=function() {
+	var numero1=parseFloat(document.getElementById("n1").value);
+	numero1=numero1 +1 ;
+	document.getElementById("n1").value=numero1;
 }
-	
+// button 1 resta
+document.getElementById("button-resta-num1").onclick=function() {
+	var numero1=parseFloat(document.getElementById("n1").value);
+	numero1=numero1 -1 ;
+	document.getElementById("n1").value=numero1;
+}
+	// button 2 sumatori 
+document.getElementById("button-suma-num2").onclick=function() {
+	var numero2=parseFloat(document.getElementById("n2").value);
+	numero2=numero2 +1 ;
+	document.getElementById("n2").value=numero2;
+}
+// button 2 resta 
+document.getElementById("button-resta-num2").onclick=function() {
+	var numero2=parseFloat(document.getElementById("n2").value);
+	numero2=numero2 -1 ;
+	document.getElementById("n2").value=numero2;
+}
+
+
+
+
+document.getElementById("calcular").onclick=function() {
+	debugger;
+	var numero1=parseFloat(document.getElementById("n1").value);
+	var numero2=parseFloat(document.getElementById("n2").value);
+	var operacio = document.querySelector("input[name=operador]:checked").value;
+		switch (operacio) {
+		//suma
+		case "+":
+			var resultat= numero1 + numero2;
+			break;
+		//resta
+		case "-":
+			var resultat= numero1 - numero2;
+			break;
+		//multiplicar
+		case "*":
+			var resultat= numero1 * numero2;
+			break;
+		//divisio
+		case "/":
+			var resultat= numero1 / numero2;
+			break;
+		}
+	document.getElementById("resultado").value=resultat;
+	debugger;
+	}
+
 
 
  
-
 </script>
 </body>
 </html>
