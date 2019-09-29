@@ -52,18 +52,23 @@
 <script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 
+document.getElementById("calcular").onclick=function (){
 		var x = document.getElementById("nx").value;
 		var y = document.getElementById("ny").value;
 		
 		if (x > y) {
 			document.getElementById("condicio1").innerHTML="Hello World";
+			console.log("Hello World");
 		}
 		if (x > y) {
 			document.getElementById("condicio2").innerHTML="Hello World";
+			console.log("Hello World");
 			}
 		else {
 			document.getElementById("condicio2").innerHTML="Goodbye";
+			alert("Goodbye")
 		}
+};
 
 </script>
 </body>
