@@ -44,33 +44,44 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-
+	
+	document.getElementById("btn1").onclick=function (){
+		funcio1();
+		document.getElementById("demo").innerHTML=funcio2("Hola");
+		document.getElementById("caixa").innerHTML=("Hola");
+	};
+	
 	function funcio1 () {
 	alert("Hello World!");
 	};
-	document.getElementById("btn1").onclick = function() {
-		funcio1();
-	};
-
+	
+//	document.getElementById("btn1").onclick=function() {
+		//document.getElementById("demo").innerHTML=funcio2("Hola");
+		
+	//};
 
 	function funcio2 (cadena){
-	console.log( cadena );
 	return cadena.toUpperCase();
 	};
 	
-	function funcio3 (f3){
+	//document.getElementById("btn1").onclick=function() {
+		//document.getElementById("caixa").innerHTML=("Hola");
+		
+	//}
+	
+	/*function funcio3 (f3){
 		document.getElementByID("caixa").innerHTML=funcio2 ("Hola");
 	}
 	
 	document.getElementById("btn1").onclick=function() {
 		document.getElementByID("demo").innerHTML=funcio2 ("Hola");
-		f3()
+		
 	};
 
-	// document.getElementById("btn1").onclick=function(){
+	 document.getElementById("btn1").onclick=function(){
 		
 		
-		
+	*/	
 	
 
 
