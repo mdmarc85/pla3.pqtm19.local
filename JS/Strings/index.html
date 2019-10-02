@@ -52,7 +52,9 @@ var pos_h = txt4.indexOf("h");
 //variable punt 5
 var txt5 = "I can eat bananas all day";
 var paraula = txt5.slice(10, 17);
-
+//variable punt 9
+var texto1='"Hello';
+var texto2=' World!"';
 
 document.getElementById("btn1").onclick=function() {
 var lengthTxt1=txt1.length;
@@ -63,9 +65,9 @@ document.getElementById("txt3Box").innerHTML=txt1+txt2;
 document.getElementById("txt4Box").innerHTML=pos_h;
 document.getElementById("txt5Box").innerHTML=paraula;
 document.getElementById("txt6Box").innerHTML=txt1.replace(/hello/i, txt5);
-document.getElementById("txt7Box").innerHTML=
-document.getElementById("txt8Box").innerHTML=
-document.getElementById("txtBox").innerHTML=
+document.getElementById("txt7Box").innerHTML=txt1.toUpperCase();
+document.getElementById("txt8Box").innerHTML=txt1.toLowerCase();
+document.getElementById("txt9Box").innerHTML=texto1.concat(texto2);
 };
 
 
