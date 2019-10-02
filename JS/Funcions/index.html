@@ -47,29 +47,31 @@
 
 	function funcio1 () {
 	alert("Hello World!");
-	}
+	};
 	document.getElementById("btn1").onclick = function() {
 		funcio1();
-	}
+	};
 
 
 	function funcio2 (cadena){
 	console.log( cadena );
 	return cadena.toUpperCase();
+	};
+	
+	function funcio3 (f3){
+		document.getElementByID("caixa").innerHTML=funcio2 ("Hola");
 	}
 	
-	
-	
-
-	/*document.getElementById("btn1").onclick = function(funcio2) {
-		document.getElementByID("demo").innerHTML=funcio2("Hola");
+	document.getElementById("btn1").onclick=function() {
+		document.getElementByID("demo").innerHTML=funcio2 ("Hola");
+		f3()
 	};
 
-	document.getElementById("btn1").onclick=function(){
+	// document.getElementById("btn1").onclick=function(){
 		
 		
 		
-	}*/
+	
 
 
 </script>

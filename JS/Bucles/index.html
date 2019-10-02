@@ -65,26 +65,43 @@
 
 var fruits = ["Apple", "Banana", "Orange"];
    document.getElementById("executar").onclick=function (){
-	   
-  		for (x=0;x<10;x++) {
-		console.log(x);
-		var UL="<ul>"
-		
-		ul+="<li>" + x + "</li>";
-		ul+="</ul>";
-		document.getElementById("llista1").innerHTML=UL;
-  		}
+	   //---- punt 1
+	   	for (i=0;i<10;i++) {
+		console.log(i);
+	//Crear un element de llista <li> dins del contenidor id=‛llista1‛     
+		document.getElementById("llista1").innerHTML+="<li>" + i + "</li>";
+		}; 
+		//----punt 2
+		for (x in fruits) {
+			console.log(x);
+			document.getElementById("llista2").innerHTML+="<li>" + fruits[x] + "</li>";
+		};
+		//------punt 3
+		for (i=0;i<10;i++) {
+			document.getElementById("llista3").innerHTML+="<li>" + i + "</li>";
+			i++};
+		//------punt 4
+		for (i=0;i<10;i++) {
+			document.getElementById("llista4").innerHTML+="<li>" + i + "</li>";
+			console.log(i);
+			i=i+2;
+		};
+		//------punt 5
+		for (i=0;i<10;i++) {
+				if (i == 5) {
+				break;
+				};	
+				document.getElementById("llista5").innerHTML+="<li>" + i + "</li>";
+		};
+		//------punt 6
+		for (i =0;i<10;i++) {
+			if (i == 5) {
+				continue;
+			};
+			document.getElementById("llista6").innerHTML+="<li>" + i + "</li>";
+		};
    };
-
-
-/*// Crear un element de llista <li> dins del contenidor id=‛llista2‛
-var fruits = ["Apple", "Banana", "Orange"]; 
-for (x ___ ___) {   console.log(x);   // Crear un element de llista <li> dins del contenidor id=‛llista2‛ 
-document.getElementById("llista2").innerHTML=
-}
- 
-} */
-
+		
 
  
 </script>
