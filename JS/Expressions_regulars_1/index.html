@@ -64,35 +64,35 @@
 <script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 
-/*var caixaPattern = /\d{3}[.]\d{2}/;
-var caixaDades = document.getEelementById("n1").value;
-	document.getElementById("btn1").onclick=function(eventClickBtn1){
-		  // Capturar Event i parar-lo
-		  eventClickBtn1.preventDefault();
-		if (caixaPattern.test(caixaDades)){
-			document.getElementById('n1').className+=" is-valid ";	
-		};
-	};*/
+
 	document.getElementById("btn1").onclick = function() {
 
-		var cadena = document.getElementById("n1").value;
-
-		var patron = /\d{3}[.]\d{2}/;
-
-		if (patron.test(cadena)) {
-
+		var cadena1 = document.getElementById("n1").value;
+		var patron1 = /\d{3}[.]\d{2}/;
+		var cadena2 = document.getElementById("n2").value;
+		var patron2 = /\d{1,3}[,]\d{1,2}/;
+//validacio 1
+		if (patron1.test(cadena1)) {
 		document.getElementById("txt1Box").innerHTML = 'El valor es correcte';
 		document.getElementById("txt1Box").className="text-success";
-
 		}
-		
 		else {
-	
 		document.getElementById("txt1Box").innerHTML = 'El valor no te el format correcte';
 		document.getElementById("txt1Box").className="text-danger";
-		};
-
+		}
+//validacio 2
+		if (patron2.test(cadena2)) {
+		document.getElementById("txt2Box").innerHTML = 'El format es correcte';
+		document.getElementById("txt2Box").className="text-success";
+		}
+		else {
+		document.getElementById("txt2Box").innerHTML = 'La dada no te el format correcte';
+		document.getElementById("txt2Box").className="text-danger";
+		}
 	};
+		
+
+
 
 
 </script>
