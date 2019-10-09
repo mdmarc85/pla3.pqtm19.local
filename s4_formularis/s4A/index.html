@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+<title>Formulario de Registro</title>
+
+<style type="text/css">
+body {
+  /*font-family: arial, helvetica;
+}*/
+
+form {
+  width: 600px;
+  margin: 0px 20px 0 20px;
+}
+
+label {
+  float: left;
+  width: 200px;
+  font-weight: bold;
+}
+
+label[for="registro_condiciones"] {
+  float: none;
+}
+
+input[type="text"], input[type="password"], textarea {
+  width: 360px;
+}
+
+input[type="checkbox"] {
+  margin-left: 200px;
+}
+
+input[type="submit"] {
+  margin: 20px 0 0 200px;
+  display: block;
+}
+</style>
+</head>
+
+<body>
+<div class="container-fluid">
+  <form action="servidor.php" method="post" id="registro">
+    <fieldset class="border p-2 rounded position-relative">
+      <div style="top:20px;right:10px;" class="text-danger small position-absolute">* Campo obligatorio</div>
+		<legend class="w-auto px-3 ">Registro</legend>
+	<div class="row">
+      	<div class="col-sm-8 offset-sm-2 mb-4">
+      	<div class="row">
+      		<div class="col-6">
+      			<label for="registro_nombre">Nombre</label>
+				<input  type="text" name="nombre" id="registro_nombre" class="form-control ">
+				<div class="invalid-feedback position-relative">
+					Por favor introduzca su nombre sin números ni cosas raras.
+				</div>
+			</div>
+      		<div class="col-6">
+      		<label for="registro_apellidos">Apellido</label>
+				<input  type="text" name="apellido" id="registro_apellido" class="form-control ">
+				<div class="invalid-feedback position-relative">
+					Por favor introduzca su apellido, no el de su vecino.
+     		 	</div>
+     		 </div>
+     		</div>
+     		</div>
+     </div>
+      
+	<div class="row">
+      	<div class="col-sm-8 offset-sm-2 mb-4">
+      	<div class="row">
+      		<div class="col-6">
+     		 <label for="registro_email">Email</label>
+     			 <input type="text" name="email" id="registro_email" class="form-control ">
+     			 <div class="invalid-feedback position-relative">
+					Por favor introduzca un Email valido.
+				</div>
+			</div>
+			<div class="col-6">
+     		 <label for="registro_password">Password</label>
+     			 <input type="password" name="password" id="registro_password" class="form-control ">
+     			 <div class="invalid-feedback position-relative">
+					La constraseña no tiene el formato solicitado.
+				</div>
+     		 	</div>
+     		 </div>
+     		</div>
+     </div>
+<!-- COMENTARIOS -->
+			<div class="col-sm-8 offset-sm-2 mb-4 position-relative">
+				<label for="registro_comentarios">Comentarios:</label>
+				<textarea name="comentarios" id="registro_comentarios" rows="10" class="form-control"></textarea>
+				<div class="invalid-feedback position-relative">
+					Por favor, introduzca un comentario de maximo 50 caracteres.
+				</div>
+			</div>
+		
+	<!--  <div class="form-group"> -->
+	<div class="col-sm-8 offset-sm-2 mb-4 position-relative">
+			<div class="form-check">
+				<input class="form-check-input " name="condiciones" type="checkbox" value="1" id="registro_condiciones" >
+					<label class="form-check-label " for="registro_condiciones">
+					Acepto las condiciones del servicio.
+					</label>
+					<div class="invalid-feedback">
+					Se requiere aceptar las condiciones del servicio.
+					</div>
+			</div>
+			<button class="mt-4 mb-4 btn btn-primary" id="registro_enviar" type="submit">Enviar</button>
+	</div> 
+	  </fieldset>
+  </form>
+ </div>
+  <!--  <script type="text/javascript" src="js/validador.js"></script>
+  <script type="text/javascript" src="js/code.js"></script> -->
+  
+  
+  	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+	<script type="text/javascript">
+	
+
+	
+	// Validacio onblur parcial NOMBRE
+	document.getElementById("registro_nombre").onblur=function(){
+		this.className=this.className.replace(/(is-valid|is-invalid)/g,'');
+		this.value=this.value.trim();
+	var nombreString=this.value;
+	var nombrePattern=/\d/g;
+	
+	if( nombrePattern.test(nombreString) || nombreString=="" ){
+		this.className+=" is-invalid ";
+	}else{
+		this.className+=" is-valid ";
+		}
+	};
+	
+	// Validacio onblur parcial APELLIDO
+	document.getElementById("registro_apellido").onblur=function(){
+		this.className=this.className.replace(/(is-valid|is-invalid)/g,'');
+		this.value=this.value.trim();
+	var apellidoString=this.value;
+	var apellidoPattern=/\d/g;
+	
+	if( apellidoPattern.test(apellidoString) || apellidoString=="" ){
+		this.className+=" is-invalid ";
+	}else{
+		this.className+=" is-valid ";
+		}
+	};
+	
+	// Validacio onblur parcial EMAIL
+	document.getElementById("registro_email").onblur=function(){
+		this.className=this.className.replace(/(is-valid|is-invalid)/g,'');
+		this.value=this.value.trim();
+	var emailString=this.value;
+	var emailPattern=/^[a-zA-Z0-9._-{2,}]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,3})$/;
+	
+	if( emailPattern.test(emailString) || emailString=="" ){
+		this.className+=" is-invalid ";
+	}else{
+		this.className+=" is-valid ";
+		}
+	};
+	
+	// Validacio onblur parcial PASSWORD
+	document.getElementById("registro_password").onblur=function(){
+		this.className=this.className.replace(/(is-valid|is-invalid)/g,'');
+		this.value=this.value.trim();
+	var passwordString=this.value;
+	var passwordPattern=/^(?=(?:.*\d){1})(?=(?:.*[A-Z]){1})(?=(?:.*[a-z]){1})\S{6,}$/;
+	
+	if( passwordPattern.test(passwordString) || passwordString=="" ){
+		this.className+=" is-invalid ";
+	}else{
+		this.className+=" is-valid ";
+		}
+	};
+	
+	// Validacio onblur parcial COMENTARIOS
+	document.getElementById("registro_comentarios").onblur=function(){
+		this.className=this.className.replace(/(is-valid|is-invalid)/g,'');
+		this.value=this.value.trim();
+	var comentariosString=this.value;
+	var comentariosPattern=/^([A-Za-z0-9]){1,50}$/;
+	
+	if( comentariosPattern.test(comentariosString) || comentariosString=="" ){
+		this.className+=" is-invalid ";
+	}else{
+		this.className+=" is-valid ";
+		}
+	};
+	
+	
+	 // Validacio onblur parcial CONDICIONES
+	 document.getElementById("registro_condiciones").onblur=function(){
+	 if(! this.checked){
+		 this.className+=' is-invalid';
+	 }else{
+			this.className+=' is-valid';
+		 }
+	 };
+	
+	
+
+	
+
+
+	// ----------------------- Validacions --------------------------
+
+			// Validacio SUBMIT
+	document.getElementById("registro_enviar").onclick=function(evt){
+		// Capturar Event i parar-lo
+	evt.preventDefault();
+	// var totOk control de enviament
+	var totOk=true;
+	
+	// Netejar classes de estils 'is-valid' o 'is-invalid'
+	document.getElementById('registro_nombre').className=document.getElementById('registro_nombre').className.replace(/(is-valid|is-invalid)/g,'');
+	document.getElementById('registro_apellido').className=document.getElementById('registro_apellido').className.replace(/(is-valid|is-invalid)/g,'');
+	document.getElementById('registro_email').className=document.getElementById('registro_email').className.replace(/(is-valid|is-invalid)/g,'');
+	document.getElementById('registro_password').className=document.getElementById('registro_password').className.replace(/(is-valid|is-invalid)/g,'');
+	document.getElementById('registro_comentarios').className=document.getElementById('registro_comentarios').className.replace(/(is-valid|is-invalid)/g,'');
+	document.getElementById('registro_condiciones').className=document.getElementById('registro_condiciones').className.replace(/(is-valid|is-invalid)/g,'');
+	
+	
+	/*// ---- Netejar classes 'is-invalid' i 'is-valid' ----
+	this.form.querySelectorAll("*").forEach(function(item){
+		item.className=item.className.replace(/(is-valid|is-invalid)/g,'');
+	});*/
+	
+	if(totOk=true) {
+	
+			//nombre
+			this.form.nombre.value=this.form.nombre.value.trim();
+			var nombreString= this.form.nombre.value;
+			var nombrePattern = /\d/g;
+			if( pattern.test(nombreString) || nombreString==""){
+				this.form.nombre.className+=' is-invalid';
+				totOk=false;
+			}else{
+				this.form.nombre.className+=' is-valid';
+			};
+			//apellido
+			this.form.apellido.value=this.form.apellido.value.trim();
+			var apellidoString= this.form.nombre.value;
+			var apellidoPattern = /\d/g;
+			if( pattern.test(apellidoString) || apellidoString==""){
+				this.form.apellido.className+=' is-invalid';
+				totOk=false;
+			}else{
+				this.form.apellido.className+=' is-valid';
+			};
+			//email
+			this.form.email.value=this.form.email.value.trim();
+			var emailString= this.form.nombre.value;
+			var emailPattern = /^[a-zA-Z0-9._-{2,}]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,3})$/;
+			if( pattern.test(emailString) || emailString==""){
+				this.form.email.className+=' is-invalid';
+				totOk=false;
+			}else{
+				this.form.email.className+=' is-valid';
+			};
+			//password
+			this.form.password.value=this.form.password.value.trim();
+			var passwordString= this.form.password.value;
+			var passwordPattern = /^(?=(?:.*\d){1})(?=(?:.*[A-Z]){1})(?=(?:.*[a-z]){1})\S{6,}$/;
+			if( pattern.test(passwordString) || passwordString==""){
+				this.form.password.className+=' is-invalid';
+				totOk=false;
+			}else{
+				this.form.password.className+=' is-valid';
+			};
+			//comentarios
+			this.form.comentarios.value=this.form.comentarios.value.trim();
+			var comentariosString= this.form.comentarios.value;
+			var comentariosPattern = /^([A-Za-z0-9]){1,50}$/;
+			if( pattern.test(comentariosString) || comentariosString==""){
+				this.form.comentarios.className+=' is-invalid';
+				totOk=false;
+			}else{
+				this.form.comentarios.className+=' is-valid';
+			};
+			//condciones
+			this.form.apellido.value=this.form.apellido.value.trim();
+			var apellidoString= this.form.nombre.value;
+			var apellidoPattern = /\d/g;
+			if( pattern.test(apellidoString) || apellidoString==""){
+				this.form.apellido.className+=' is-invalid';
+				totOk=false;
+			}else{
+				this.form.apellido.className+=' is-valid';
+			};
+		
+	}else{
+		this.form.submit();
+		}	
+	};
+
+	
+	
+</script>
+</body>
+</html>
