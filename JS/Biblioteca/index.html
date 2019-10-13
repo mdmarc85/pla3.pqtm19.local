@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="boxBook">
+
+
+
+</div>
+<button id="btnBook">Carregar</button>
+
+
+<script>
+var xhr;
+document.getElementById("btnBook").onclick=function(){
+	// Crear instancia de l'objecte XMLHttpRequest sobre la variable xhr
+	if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+	    xhr = new XMLHttpRequest();
+	} else if (window.ActiveXObject) { // IE
+	    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	//Definir la funcio callback()
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4 && xhr.status == 200 ) {
+			// tot va be , s'ha rebut la resposta
+			var objBook=JSON.parse(xhr.responseText);
+			document.getElementById("boxBook").innerHTML=xhr.responseText;
+		}
+	};
+	//Definim els parametres de solicituds HTTP
+	xhr.open('GET','http://localhost:8888/pla3.pqtm19.local/JSON/book.json',true);
+	//Iniciem la solicitud
+	xhr.send(null);
+	
+	
+}
+
+  
+
+</script>
+
+</body>
+</html>
+
